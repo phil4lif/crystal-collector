@@ -1,6 +1,6 @@
 //declare some global vars for scores random number and user score and crystal values
-var winCounter=0;
-var lossCounter=0;
+var wins=0;
+var losses=0;
 var randomNumber=0;
 var userScore=0;
 var crysOneVal=0;
@@ -13,6 +13,8 @@ var crysFourVal=0;
 
 //the game will generate a random number that will be displayed in the random number div and this will be the users goal score to reach without exceeding it
 function numberGen(){
+    //resets the user score
+    userScore = 0;
     //makes the random number
     randomNumber = (Math.floor(Math.random()*120));
     //makes values between 1 and 12 for the crystal values
@@ -25,32 +27,90 @@ $(".randomnumber").text(randomNumber);
 }
 numberGen();
 
-
+if (userScore < randomNumber){
 //write code for click events on the crystals
 $(".crystalone").on("click", function(){
+    if (userScore === randomNumber){
+        wins++;
+        $(".wins").text(wins);
+        numberGen()
+    }
+    
+    if (userScore > randomNumber){
+        losses++;
+        $(".losses").text(losses);
+        numberGen()
+    }
+    //each click value is added to the total score
     userScore = userScore + crysOneVal;
+    //the new score is displayed
     $(".score").text(userScore);
 });
 $(".crystaltwo").on("click", function(){
+    if (userScore === randomNumber){
+        wins++;
+        $(".wins").text(wins);
+        numberGen()
+    }
+    
+    if (userScore > randomNumber){
+        losses++;
+        $(".losses").text(losses);
+        numberGen()
+    }
+    //each click value is added to the total score
     userScore = userScore + crysTwoVal;
+    //the new score is displayed
     $(".score").text(userScore);
 });
 $(".crystalthree").on("click", function(){
+    if (userScore === randomNumber){
+        wins++;
+        $(".wins").text(wins);
+        numberGen()
+    }
+    
+    if (userScore > randomNumber){
+        losses++;
+        $(".losses").text(losses);
+        numberGen()
+    }
+    //each click value is added to the total score
     userScore = userScore + crysThreeVal;
+    //the new score is displayed
     $(".score").text(userScore);
 });
 $(".crystalfour").on("click", function(){
+    if (userScore === randomNumber){
+        wins++;
+        $(".wins").text(wins);
+        numberGen()
+    }
+    
+    if (userScore > randomNumber){
+        losses++;
+        $(".losses").text(losses);
+        numberGen()
+    }
+    //each click value is added to the total score
     userScore = userScore + crysFourVal;
+    // the new score is displayed
     $(".score").text(userScore);
 });
-
-//each click value is added to the total score
-
-//the total score is displayed in the score div
-
+}
 //if the score matches the random number then the user is victorious
+// if (userScore === randomNumber){
+//     wins++;
+//     $(".wins").text(wins);
+//     numberGen()
+// }
 
-//the scoreboard will update and the game will restart
+// if (userScore > randomNumber){
+//     losses++;
+//     $(".losses").text(losses);
+//     numberGen()
+// }
+
 
 //if the user score exceeds the random number then the game is lost and will restart
 
