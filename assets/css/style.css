@@ -66,3 +66,20 @@ body {
     background-color: white;
     float:left;
 }
+
+.totalscore{
+    background-color:cadetblue;
+    color:blue;
+    font-size: 20px;
+    width: 300px;
+}
+
+.score {
+    background-color: aquamarine;
+    color: blue;
+    font-size: 72px;
+    height:100px;
+    width:300px;
+    margin-top: 5px;
+    text-align: center;
+}
