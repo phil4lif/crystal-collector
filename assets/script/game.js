@@ -13,18 +13,24 @@ var crysFourVal=0;
 
 //the game will generate a random number that will be displayed in the random number div and this will be the users goal score to reach without exceeding it
 function numberGen(){
+    //makes the random number
     randomNumber = (Math.floor(Math.random()*120));
+    //makes values between 1 and 12 for the crystal values
     crysOneVal = (Math.floor(Math.random()*12));
     crysTwoVal = (Math.floor(Math.random()*12));
     crysThreeVal = (Math.floor(Math.random()*12));
     crysFourVal = (Math.floor(Math.random()*12));
     //console.log(randomNumber, crysOneVal, crysTwoVal, crysThreeVal, crysFourVal);
 $(".randomnumber").text(randomNumber);
-
 }
-//four different crystal buttons are assigned individual values that will be added to the users total score
+numberGen();
+
 
 //write code for click events on the crystals
+$(".crystalone").on("click", function(){
+    userScore = userScore + crysOneVal;
+    $(".score").text(userScore);
+});
 
 //each click value is added to the total score
 
