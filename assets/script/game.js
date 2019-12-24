@@ -31,6 +31,18 @@ $(".crystalone").on("click", function(){
     userScore = userScore + crysOneVal;
     $(".score").text(userScore);
 });
+$(".crystaltwo").on("click", function(){
+    userScore = userScore + crysTwoVal;
+    $(".score").text(userScore);
+});
+$(".crystalthree").on("click", function(){
+    userScore = userScore + crysThreeVal;
+    $(".score").text(userScore);
+});
+$(".crystalfour").on("click", function(){
+    userScore = userScore + crysFourVal;
+    $(".score").text(userScore);
+});
 
 //each click value is added to the total score
 
