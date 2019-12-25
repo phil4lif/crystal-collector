@@ -9,8 +9,6 @@ var crysThreeVal = 0;
 var crysFourVal = 0;
 
 
-
-
 //the game will generate a random number that will be displayed in the random number div and this will be the users goal score to reach without exceeding it
 function numberGen() {
     //resets the user score
@@ -24,7 +22,9 @@ function numberGen() {
     crysThreeVal = (Math.ceil(Math.random() * 12));
     crysFourVal = (Math.ceil(Math.random() * 12));
     //console.log(randomNumber, crysOneVal, crysTwoVal, crysThreeVal, crysFourVal);
+    //Displays the random number inside of the div
     $(".randomnumber").text(randomNumber);
+    
 }
 
 numberGen();
@@ -34,7 +34,7 @@ numberGen();
 $(".crystal").on("click", function () {
     //each click value is added to the total score
     var crystal = $(this).attr("data-crystal")
-
+    $(".windiv").text("");
     if (crystal === "crystalone") {
         userScore = userScore + crysOneVal;
     }
@@ -48,14 +48,12 @@ $(".crystal").on("click", function () {
         userScore = userScore + crysFourVal;
     }
 
-    //the new score is displayed
+    
     $(".score").text(userScore);
     if (userScore === randomNumber) {
         wins++;
-        $(".windiv").text("You Win");
+        $(".windiv").text("You Win!");
         $(".wins").text(wins);
-
-        console.log("you win")
         numberGen()
     } if (userScore > randomNumber) {
         losses++;
@@ -65,6 +63,9 @@ $(".crystal").on("click", function () {
         numberGen()
     }
 });
+
+//THIS IS A BUNCH OF OLD CODE THAT I HAD ORIGINIALLY WRITTEN: I HAD MADE FOUR DIFFERENT ONCLICK FUNCTIONS BECAUSE I WAS NOT USING THE THIS ON THE DATA LIKE I AM NOW
+
 
 // $(".crystaltwo").on("click", function(){
 //     //each click value is added to the total score

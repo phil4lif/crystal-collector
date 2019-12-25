@@ -53,6 +53,12 @@ body {
     position: absolute;
     right:0px;
 }
+.windiv{
+    font-size:32px;
+    background-color: gold;
+    color:green;
+    width: 300px;
+}
 
 .crystalholder {
     height:70px;
