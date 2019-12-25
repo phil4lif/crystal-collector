@@ -25,79 +25,76 @@ function numberGen(){
     //console.log(randomNumber, crysOneVal, crysTwoVal, crysThreeVal, crysFourVal);
 $(".randomnumber").text(randomNumber);
 }
+
 numberGen();
 
 if (userScore < randomNumber){
 //write code for click events on the crystals
 $(".crystalone").on("click", function(){
-    if (userScore === randomNumber){
-        wins++;
-        $(".wins").text(wins);
-        numberGen()
-    }
-    
-    if (userScore > randomNumber){
-        losses++;
-        $(".losses").text(losses);
-        numberGen()
-    }
     //each click value is added to the total score
     userScore = userScore + crysOneVal;
     //the new score is displayed
     $(".score").text(userScore);
-});
-$(".crystaltwo").on("click", function(){
     if (userScore === randomNumber){
         wins++;
         $(".wins").text(wins);
         numberGen()
-    }
-    
-    if (userScore > randomNumber){
+    }if (userScore > randomNumber){
         losses++;
         $(".losses").text(losses);
         numberGen()
     }
+});
+
+$(".crystaltwo").on("click", function(){
     //each click value is added to the total score
     userScore = userScore + crysTwoVal;
     //the new score is displayed
     $(".score").text(userScore);
-});
-$(".crystalthree").on("click", function(){
     if (userScore === randomNumber){
         wins++;
         $(".wins").text(wins);
         numberGen()
-    }
-    
-    if (userScore > randomNumber){
+    }if (userScore > randomNumber){
         losses++;
         $(".losses").text(losses);
         numberGen()
     }
+});
+
+$(".crystalthree").on("click", function(){
     //each click value is added to the total score
     userScore = userScore + crysThreeVal;
     //the new score is displayed
     $(".score").text(userScore);
-});
-$(".crystalfour").on("click", function(){
     if (userScore === randomNumber){
         wins++;
         $(".wins").text(wins);
         numberGen()
-    }
-    
-    if (userScore > randomNumber){
+    }if (userScore > randomNumber){
         losses++;
         $(".losses").text(losses);
         numberGen()
     }
+});
+
+$(".crystalfour").on("click", function(){
     //each click value is added to the total score
     userScore = userScore + crysFourVal;
     // the new score is displayed
     $(".score").text(userScore);
+    if (userScore === randomNumber){
+        wins++;
+        $(".wins").text(wins);
+        numberGen()
+    }if (userScore > randomNumber){
+        losses++;
+        $(".losses").text(losses);
+        numberGen()
+    }
 });
 }
+
 //if the score matches the random number then the user is victorious
 // if (userScore === randomNumber){
 //     wins++;
